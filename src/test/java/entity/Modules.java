@@ -9,6 +9,15 @@ public class Modules {
 	String title;
 	String type;
 	
+	public Modules(){
+	}
+	
+	public Modules(String id, String title, String type){
+		this.setId(id);
+		this.setTitle(title);
+		this.setType(type);
+	}
+	
 	@XmlAttribute
 	public String getId() {
 		return id;

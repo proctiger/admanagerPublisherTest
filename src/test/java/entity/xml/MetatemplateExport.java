@@ -15,6 +15,20 @@ public class MetatemplateExport {
 	String media;
 	String encoding;
 	
+	
+	public MetatemplateExport() {
+	}
+	
+	public MetatemplateExport(String title, String url, String template, String path, String media, String enconding) {
+		this.setTitle(title);
+		this.setUrl(url);
+		this.setTemplate(template);
+		this.setPath(path);
+		this.setMedia(media);
+		this.setEncoding(enconding);
+	}
+
+	
 	@XmlAttribute
 	public String getTitle() {
 		return title;
