@@ -16,7 +16,6 @@ public class Serializer {
         marshaller.setProperty(Marshaller.JAXB_ENCODING, System.getProperty("file.encoding"));
         marshaller.setProperty( Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE );
         StringWriter writer = new StringWriter();
-        marshaller.marshal(arg, writer);
         return writer.toString();
     }
 

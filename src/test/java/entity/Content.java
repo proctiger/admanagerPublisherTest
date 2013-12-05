@@ -3,6 +3,8 @@ package entity;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlValue;
 
+import org.eclipse.persistence.oxm.annotations.XmlCDATA;
+
 public class Content {
 
 	private String type;
@@ -15,7 +17,8 @@ public class Content {
 	public void setType(String type) {
 		this.type = type;
 	}
-
+	
+	@XmlCDATA
 	@XmlValue
 	public String getContent() {
 		return content;
