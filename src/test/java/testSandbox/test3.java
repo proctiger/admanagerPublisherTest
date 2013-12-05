@@ -21,7 +21,7 @@ import entity.xml.FactorySlots;
 import entity.xml.Metatemplate;
 
 public class test3 {
-	int idtSlot = 41;
+	static int idtSlot = 41;
 
 	public static void main(String[] args) throws Exception {
 		//cria Fields
@@ -41,13 +41,14 @@ public class test3 {
 		for (int i = 1; i < 6; i++) {
 			advList.add(FactoryAdvertisement.createAdv(i, fields));
 		}
+		
 
 		//cria Slots
 		int idtSlot = 42;
 		ArrayList<Slot> slots = new ArrayList<Slot>();
 		for (int i = 1; i <= 13; i++) {
    		    idtSlot++;
-   		    slots.add(FactorySlots.createSlot(String.format("P%02d", i), idtSlot+"", fields, advList));
+   		    slots.add(FactorySlots.createSlot(String.format("P%02d", i), idtSlot+"", fields));
 		}
 		
 		FactoryMetatemplateExport.getMetatemplateExportList();
@@ -175,16 +176,16 @@ public class test3 {
 //		return adv;
 //	}
 
-//	private static Advertisement createGroupConfig(String idtSlot) {
-//		Advertisement adv = new Advertisement();
-//		adv.setGroupId("config");
-//		adv.setTitleAd("Configurações");
-//		
-//		Field field = FactoryField.createField("idtSlot", "Identificador do slot", idtSlot);
-//		adv.getFields().add(field);
-//		return adv;
-//	}
-//	
+	private static Advertisement createGroupConfig(String idtSlot) {
+		Advertisement adv = new Advertisement();
+		adv.setGroupId("config");
+		adv.setTitleAd("Configurações");
+		
+		Field field = FactoryField.createField("idtSlot", "Identificador do slot", idtSlot);
+		adv.getFields().add(field);
+		return adv;
+	}
+	
 
 //	private static Group createGroupConfig(String idtSlot) {
 //		Group group = new Group();

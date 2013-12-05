@@ -13,8 +13,18 @@ public class FactoryAdvertisement {
 		adv.setGroupId(String.format("anuncio-"+ "%02d", id));
 		adv.setTitleAd(String.format("Anúncio %02d", id));
 		adv.setFields(fields);
-	    
+
 		return adv;
 	}
-	
+
+	public static Advertisement createSlotGroup(String idtSlot) {
+		Advertisement adv = new Advertisement();
+		adv.setGroupId("config");
+		adv.setTitleAd("Configurações");
+
+		Field field = FactoryField.createField("idtSlot", "Identificador do slot", idtSlot);
+		adv.getFields().add(field);
+		return adv;
+	}
+
 }
